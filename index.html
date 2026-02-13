@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>🔥 QR CODE - MAINUL - X 🔥</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(-45deg, #0a0f1e, #0e1a2b, #0c1a2f, #121a2c);
+            background-size: 400% 400%;
+            animation: gradientBG 20s ease infinite;
+            min-height: 100vh;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 420px;
+            width: 100%;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 28px;
+            padding: 20px 18px 18px;
+            box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 0.8s ease;
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        
+        .title {
+            font-size: 1.7em;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 4px;
+            font-weight: 800;
+            animation: gradient 5s ease infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            letter-spacing: 1px;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .wave {
+            display: inline-block;
+            animation: wave 3s infinite;
+            transform-origin: 70% 70%;
+            font-size: 0.85em;
+        }
+        
+        @keyframes wave {
+            0%, 60%, 100% { transform: rotate(0deg); }
+            10% { transform: rotate(14deg); }
+            20% { transform: rotate(-8deg); }
+            30% { transform: rotate(14deg); }
+            40% { transform: rotate(-4deg); }
+            50% { transform: rotate(10deg); }
+        }
+        
+        .subtitle {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.75em;
+            margin-top: 3px;
+            letter-spacing: 2px;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+        
+        .nano-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 8px 0 14px;
+            flex-wrap: wrap;
+        }
+        
+        .nano-green, .nano-red, .nano-blue {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            animation: nanoGlow 3s ease-in-out infinite;
+            padding: 5px 12px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            border: 1px solid;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nano-green {
+            color: #00e676;
+            text-shadow: 0 0 10px rgba(0, 230, 118, 0.3);
+            background: rgba(0, 230, 118, 0.05);
+            border-color: rgba(0, 230, 118, 0.3);
+        }
+        
+        .nano-red {
+            color: #ff5252;
+            text-shadow: 0 0 10px rgba(255, 82, 82, 0.3);
+            background: rgba(255, 82, 82, 0.05);
+            border-color: rgba(255, 82, 82, 0.3);
+            animation-delay: 0.2s;
+        }
+        
+        .nano-blue {
+            color: #40c4ff;
+            text-shadow: 0 0 10px rgba(64, 196, 255, 0.3);
+            background: rgba(64, 196, 255, 0.05);
+            border-color: rgba(64, 196, 255, 0.3);
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes nanoGlow {
+            0%, 100% { 
+                opacity: 0.9; 
+                letter-spacing: 1.5px; 
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 1; 
+                letter-spacing: 2.5px; 
+                text-shadow: 0 0 12px currentColor;
+                transform: scale(1.02);
+            }
+        }
+        
+        .input-section {
+            margin-bottom: 16px;
+        }
+        
+        .input-wrapper {
+            position: relative;
+        }
+        
+        .url-input {
+            width: 100%;
+            padding: 14px 18px;
+            padding-right: 45px;
+            font-size: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            color: white;
+            transition: all 0.3s ease;
+            font-weight: 400;
+        }
+        
+        .url-input:focus {
+            outline: none;
+            border-color: #ff6b6b;
+            box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2);
+        }
+        
+        .url-input::placeholder {
+            color: rgba(255, 255, 255, 0.35);
+            font-weight: 300;
+            font-size: 14px;
+        }
+        
+        .input-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.1em;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .size-section {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .size-item {
+            flex: 1;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            font-size: 0.75em;
+            letter-spacing: 0.8px;
+        }
+        
+        select {
+            width: 100%;
+            padding: 10px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
+            border-radius: 14px;
+            color: white;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 400;
+        }
+        
+        select option {
+            background: #1a1a2e;
+            color: white;
+        }
+        
+        select:hover {
+            border-color: #4ecdc4;
+            box-shadow: 0 0 10px rgba(78, 205, 196, 0.15);
+        }
+        
+        .color-card {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1.5px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 16px 16px;
+            margin-bottom: 16px;
+            backdrop-filter: blur(8px);
+            transition: all 0.2s;
+        }
+        
+        .color-card:hover {
+            border-color: rgba(78, 205, 196, 0.3);
+            background: rgba(0, 0, 0, 0.25);
+        }
+        
+        .color-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.85em;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+        }
+        
+        .color-header i {
+            color: #4ecdc4;
+            font-size: 1.1em;
+        }
+        
+        .color-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .color-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 14px;
+            padding: 8px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .color-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .color-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .qr-color-dot {
+            width: 20px;
+            height: 20px;
+            background: #000;
+            border-radius: 6px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .bg-color-dot {
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 6px;
+            border: 2px solid rgba(0,0,0,0.2);
+        }
+        
+        .color-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .color-title {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        
+        .color-value {
+            color: white;
+            font-size: 0.8em;
+            font-weight: 600;
+            font-family: monospace;
+        }
+        
+        .color-picker {
+            width: 45px;
+            height: 38px;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            cursor: pointer;
+            background: transparent;
+            padding: 2px;
+        }
+        
+        .color-picker:hover {
+            border-color: #4ecdc4;
+        }
+        
+        .generate-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border: none;
+            border-radius: 16px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 16px -5px rgba(255, 107, 107, 0.3);
+        }
+        
+        .generate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -5px rgba(255, 107, 107, 0.4);
+        }
+        
+        .qr-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            margin: 16px 0;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+        }
+        
+        #qrcode {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+        }
+        
+        #qrcode canvas {
+            display: block;
+            border-radius: 10px;
+            image-rendering: crisp-edges;
+            image-rendering: pixelated;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            max-width: 100%;
+            height: auto;
+            width: auto !important;
+        }
+        
+        .download-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #00b09b, #96c93d);
+            color: white;
+            border: none;
+            border-radius: 16px;
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 14px;
+            letter-spacing: 1px;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(150, 201, 61, 0.25);
+        }
+        
+        .mini-card {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1.5px solid rgba(0, 255, 255, 0.35);
+            border-radius: 80px;
+            padding: 10px 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+            margin-top: 14px;
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .dev {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff;
+            font-size: 0.85em;
+            font-weight: 500;
+            padding-right: 18px;
+            border-right: 1.5px solid rgba(0, 255, 255, 0.35);
+        }
+        
+        .dev i {
+            color: #00ffff;
+            font-size: 1.1em;
+            text-shadow: 0 0 12px #00ffff;
+        }
+        
+        .dev-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .dev-label {
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(0, 255, 255, 0.6);
+            margin-bottom: 1px;
+        }
+        
+        .dev-name {
+            color: #00ffff;
+            font-weight: 700;
+            font-size: 1em;
+            text-shadow: 0 0 16px #00ffff;
+            letter-spacing: 0.8px;
+        }
+        
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1em;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px) scale(1.1);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .phone { color: #25D366; }
+        .whatsapp { color: #25D366; }
+        .email { color: #EA4335; }
+        .telegram { color: #0088cc; }
+        
+        .footer {
+            text-align: center;
+            margin-top: 14px;
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 0.7em;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer .x-brand {
+            color: #00ffff;
+            font-weight: 600;
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+        }
+        
+        @media (max-width: 380px) {
+            .container { 
+                padding: 15px; 
+            }
+            .title { 
+                font-size: 1.5em; 
+            }
+            .nano-green, .nano-red, .nano-blue { 
+                font-size: 0.55rem; 
+                padding: 4px 10px;
+            }
+            .mini-card { 
+                flex-direction: column; 
+                padding: 14px; 
+                gap: 12px;
+                border-radius: 30px;
+            }
+            .dev { 
+                border-right: none; 
+                border-bottom: 1.5px solid rgba(0, 255, 255, 0.35); 
+                padding-right: 0; 
+                padding-bottom: 10px; 
+                margin-bottom: 6px; 
+                width: 100%;
+                justify-content: center;
+            }
+            .dev-info {
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">
+                <span class="wave">📱</span> 
+                QR CODE GENERATOR
+            </h1>
+            <p class="subtitle">TEXT · URL · NUMBER</p>
+        </div>
+        
+        <div class="nano-container">
+            <span class="nano-green">⚡ FAST · FREE</span>
+            <span class="nano-red">🎯 NO WATERMARK</span>
+            <span class="nano-blue">✨ HD</span>
+        </div>
+        
+        <div class="input-section">
+            <div class="input-wrapper">
+                <input type="text" class="url-input" id="textInput" 
+                       placeholder="টেক্সট বা URL লিখুন...">
+                <i class="fas fa-link input-icon"></i>
+            </div>
+        </div>
+        
+        <div class="size-section">
+            <div class="size-item">
+                <label>📏 সাইজ নির্বাচন করুন</label>
+                <select id="sizeSelect">
+                    <option value="250">ছোট (250px)</option>
+                    <option value="300" selected>মাঝারি (300px)</option>
+                    <option value="350">বড় (350px)</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="color-card">
+            <div class="color-header">
+                <i class="fas fa-palette"></i>
+                <span>কালার সিলেক্ট করুন</span>
+            </div>
+            
+            <div class="color-options">
+                <div class="color-row">
+                    <div class="color-label">
+                        <div class="color-icon">
+                            <div class="qr-color-dot" id="qrColorPreview" style="background: #000000;"></div>
+                        </div>
+                        <div class="color-text">
+                            <span class="color-title">QR কালার</span>
+                            <span class="color-value" id="darkColorText">#000000</span>
+                        </div>
+                    </div>
+                    <input type="color" id="darkColor" class="color-picker" value="#000000">
+                </div>
+                
+                <div class="color-row">
+                    <div class="color-label">
+                        <div class="color-icon">
+                            <div class="bg-color-dot" id="bgColorPreview" style="background: #ffffff;"></div>
+                        </div>
+                        <div class="color-text">
+                            <span class="color-title">ব্যাকগ্রাউন্ড</span>
+                            <span class="color-value" id="lightColorText">#FFFFFF</span>
+                        </div>
+                    </div>
+                    <input type="color" id="lightColor" class="color-picker" value="#ffffff">
+                </div>
+            </div>
+        </div>
+        
+        <button class="generate-btn" onclick="generateQR()">
+            <i class="fas fa-qrcode"></i> জেনারেট করুন
+        </button>
+        
+        <div class="qr-container" id="qrContainer">
+            <div id="qrcode"></div>
+            <button class="download-btn" id="downloadBtn" onclick="downloadQR()">
+                <i class="fas fa-download"></i> PNG ডাউনলোড
+            </button>
+        </div>
+        
+        <div class="mini-card">
+            <div class="dev">
+                <i class="fas fa-code-branch"></i>
+                <div class="dev-info">
+                    <span class="dev-label">DEVELOPER</span>
+                    <span class="dev-name">MAINUL ISLAM</span>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="tel:+8801308850528" class="social-icon phone" data-tooltip="📞 +8801308850528" target="_blank">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <a href="https://wa.me/8801308850528" class="social-icon whatsapp" data-tooltip="💬 +8801308850528" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="mailto:githubmainul@gmail.com" class="social-icon email" data-tooltip="📧 githubmainul@gmail.com" target="_blank">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://t.me/mdmainulislaminfo" class="social-icon telegram" data-tooltip="✈️ @mdmainulislaminfo" target="_blank">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>©2026 QR CODE GENERATOR - Designed & Developed by MAINUL-X. All rights reserved.</p>
+            <p style="color: rgba(255,255,255,0.4);">Made with in Bangladesh</p>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        let qrCode = null;
+        
+        function updateColorPreview() {
+            const darkColor = document.getElementById('darkColor').value;
+            const lightColor = document.getElementById('lightColor').value;
+            
+            document.getElementById('qrColorPreview').style.background = darkColor;
+            document.getElementById('bgColorPreview').style.background = lightColor;
+            
+            document.getElementById('darkColorText').textContent = darkColor.toUpperCase();
+            document.getElementById('lightColorText').textContent = lightColor.toUpperCase();
+        }
+        
+        document.getElementById('darkColor').addEventListener('input', updateColorPreview);
+        document.getElementById('lightColor').addEventListener('input', updateColorPreview);
+        
+        function generateQR() {
+            const text = document.getElementById('textInput').value.trim();
+            if (!text) {
+                alert('⚠️ টেক্সট বা URL লিখুন!');
+                return;
+            }
+            
+            const size = parseInt(document.getElementById('sizeSelect').value);
+            const darkColor = document.getElementById('darkColor').value;
+            const lightColor = document.getElementById('lightColor').value;
+            
+            document.getElementById('qrcode').innerHTML = '';
+            
+            qrCode = new QRCode(document.getElementById('qrcode'), {
+                text: text,
+                width: size,
+                height: size,
+                colorDark: darkColor,
+                colorLight: lightColor,
+                correctLevel: QRCode.CorrectLevel.H
+            });
+            
+            document.getElementById('qrContainer').style.display = 'flex';
+            document.getElementById('downloadBtn').style.display = 'none';
+            
+            setTimeout(() => {
+                const canvas = document.querySelector('#qrcode canvas');
+                if (canvas) {
+                    document.getElementById('downloadBtn').style.display = 'flex';
+                }
+            }, 600);
+        }
+        
+        function downloadQR() {
+            const canvas = document.querySelector('#qrcode canvas');
+            if (!canvas) {
+                alert('❌ QR Code জেনারেট হয়নি!');
+                return;
+            }
+            
+            try {
+                const borderSize = 35;
+                const scaleFactor = 2;
+                
+                const finalCanvas = document.createElement('canvas');
+                finalCanvas.width = (canvas.width * scaleFactor) + (borderSize * 2);
+                finalCanvas.height = (canvas.height * scaleFactor) + (borderSize * 2);
+                
+                const ctx = finalCanvas.getContext('2d');
+                ctx.imageSmoothingEnabled = false;
+                
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
+                
+                ctx.drawImage(canvas, 
+                    borderSize, borderSize, 
+                    canvas.width * scaleFactor, canvas.height * scaleFactor
+                );
+                
+                finalCanvas.toBlob(function(blob) {
+                    if (!blob) {
+                        alert('❌ ইমেজ তৈরি হয়নি!');
+                        return;
+                    }
+                    
+                    const blobUrl = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = blobUrl;
+                    link.download = `MAINUL-X-QR-${Date.now()}.png`;
+                    link.click();
+                    URL.revokeObjectURL(blobUrl);
+                    alert('✅ ডাউনলোড শুরু হয়েছে!');
+                }, 'image/png', 1.0);
+                
+            } catch (error) {
+                alert('❌ ডাউনলোড ব্যর্থ!');
+            }
+        }
+        
+        document.getElementById('textInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                generateQR();
+            }
+        });
+        
+        updateColorPreview();
+    </script>
+</body>
+</html>
