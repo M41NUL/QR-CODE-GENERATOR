@@ -47,8 +47,8 @@
   
 | 🎬 Video Tutorial |
 |-------------------|
-| <a href="https://www.tiktok.com/@M41NUL/video/123456789"><img src="https://img.shields.io/badge/-Watch%20Now-000000?style=for-the-badge&logo=tiktok" width="200"></a> |
-| ⏱️ Duration: 1:30 |
+| <a href="https://vt.tiktok.com/ZSmMRTCL2/"><img src="https://img.shields.io/badge/-Watch%20Now-000000?style=for-the-badge&logo=tiktok" width="200"></a> |
+| ⏱️ Duration: 0:50 |
 | 👤 Creator: @mainul.9x |
 
 </div>
